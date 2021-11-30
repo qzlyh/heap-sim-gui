@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+update.bat
+update.sh
+
 # C extensions
 *.so
 

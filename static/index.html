@@ -1,0 +1,103 @@
+<html>
+
+<meta charset="utf-8">
+<title>Heap Simulate GUI</title>
+
+<head>
+    <!-- script -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/bootstrap-table.js"></script>
+    <script src="static/js/jquery.tablednd.min.js"></script>
+    <script src="static/js/bootstrap-table-reorder-rows.js"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">  
+    <link href="static/css/index.css" rel="stylesheet">
+    <link href="static/css/bootstrap-table.css" rel="stylesheet">
+    <link href="static/css/bootstrap-table-reorder-rows.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <div class="main">
+            <div class="left-div">
+                <ul id="chunk_list" class="list-group" style="width:60%; float:right;">
+                </ul>
+            </div>
+            <div class="mid-div">
+                <div class="center-block">
+                    <canvas id="myCanvas" width="800" height="608" style="border:1px solid #CCCCCC;"></canvas>
+                    <canvas id="cursor"   width="800" height="608" ></canvas>
+                </div>
+                <p></p>
+                <div id="bins" style="width:802px" ></div>
+            </div>
+            <div class="right-div">
+                <div class="form-inline">
+                    <select id="libc" class="form-control">
+                        <option value="libc2.23" selected="selected">libc2.23</option>
+                        <option value="libc2.27">libc2.27</option>
+                        <option value="libc2.29">libc2.29</option>
+                        <option value="libc2.31">libc2.31</option>
+                        <option value="libc2.32">libc2.32</option>
+                        <option value="libc2.33">libc2.33</option>
+                        <option value="libc2.34">libc2.34</option>
+                    </select>
+                    &nbsp;
+                    <button id="error_btn" class="btn btn-success" type="button">Error(0)</button>
+                    &nbsp;
+                    <button id="clear_btn" class="btn btn-warning" type="button">Clear steps</button>
+                </div>
+                <p></p>
+                <!-- ----------------------------------------- -->
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button id="malloc_btn" class="btn btn-default " type="button">malloc</button>
+                    </span>
+                    <input id="malloc_size" type="text" class="form-control">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button id="calloc_btn" class="btn btn-default" type="button">calloc</button>
+                    </span>
+                    <input id="calloc_size" type="text" class="form-control">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button id="free_btn" class="btn btn-default" type="button">free&nbsp;&nbsp;</button>
+                    </span>
+                    <input id="free_addr" type="text" class="form-control">
+                </div>
+                <p></p>
+                <!-- ----------------------------------------- -->
+                <div style="height: 70%;">
+                    <table id="table">
+                        <thead><tr><th data-field="step">Step</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Error Modal -->
+            <div class="modal fade" id="error_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" style="width:800px">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title">Error</h4>
+                        </div>
+                        <div class="modal-body">
+                            <pre id="error_content"></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="static/js/index.js"></script>
+
+</html>
+
+
+

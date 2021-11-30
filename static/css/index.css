@@ -1,0 +1,50 @@
+body {
+    font-family: "Consolas";
+}
+.table tbody tr td{
+    vertical-align: middle;
+}
+button {
+    font-family: "Consolas";
+}
+#bins {
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: "Consolas";
+    border: 1px solid #CCCCCC;
+}
+#myCanvas{
+    background:rgba(255,255,255,0);/*关键点*/
+    position:absolute;
+    z-index:1;/*确保在遮盖的元素的上方*/
+}
+.main {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    display: block;
+}
+.left-div {
+    margin-right: 1%;
+    float: left;
+    width: 25%;
+    display: block;
+    box-sizing: border-box;
+}
+.mid-div {
+    display: block;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    width: 870px;
+    box-sizing: border-box;
+    float: left;
+}
+.right-div {
+    margin-right: 0;
+    width: 20%;
+    box-sizing: border-box;
+    float: left;
+    display: block;
+}
