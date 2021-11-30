@@ -98,6 +98,11 @@ app = Flask(__name__)
 def index():
     return app.send_static_file('index.html')
 
+@app.route('/favicon.ico')
+def favicon():
+    return app.send_static_file('favicon.ico')
+
+
 @app.route('/simulate', methods=['POST'])
 def simulate():
     data = json.loads(request.get_data(as_text=True))

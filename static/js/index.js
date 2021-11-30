@@ -346,12 +346,12 @@ function fill_addr_info(lines) {
 // 在hex展示单个chunk信息
 function showChunk(addr,size) {
     mouseWheelIndex = (addr - startAddr)/32*2;
-    if(mouseWheelIndex < 0) {
-        mouseWheelIndex = 0;
-    }
     var lineNum = heap_mem.length/32;
     if(lineNum-mouseWheelIndex <= 20) {
         mouseWheelIndex = lineNum-20;
+    }
+    if(mouseWheelIndex < 0) {
+        mouseWheelIndex = 0;
     }
     selectStart = (addr - startAddr)*2;
     selectEnd   = selectStart + (size-size%2)*2 - 2;
