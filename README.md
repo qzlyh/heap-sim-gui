@@ -17,6 +17,8 @@ Heap-sim-gui is a simple graphical utility that displays heap info. You can mall
 
 ## Install / 安装
 
+### 直接安装
+
 需要安装python2.7和第三方库。
 
 Need to install some python lib.
@@ -25,6 +27,16 @@ Need to install some python lib.
 pip install -r requirements.txt
 ```
 
+### 使用docker
+
+需要加上配置`--security-opt seccomp=sec.conf`，才能正常运行。
+
+You need to use `--security-opt seccomp=sec.conf`.
+
+```bash
+docker build -t heap-sim-gui .
+docker run --security-opt seccomp=sec.conf -itd -p 5000:5000 heap-sim-gui
+```
 
 
 ## Launch  / 启动
